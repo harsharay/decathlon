@@ -28,19 +28,31 @@ const Categories = (props) => {
 
         // let localCount;
 
-        // let localCopyOfItems = [...allItemsFromStore]
+        let localCopyOfItems = [...allItemsFromStore]
+        
+        let existingItem = "";
+        
+        for(let i=0;i<allItemsFromStore.length;i++) {
+            if(allItemsFromStore[i].uniqueId === props.products[index].uniqueId) {
+                existingItem = allItemsFromStore[i].uniqueId
+            }
+        }
 
-        // localCopyOfItems.forEach(item => {
-        //     if(item.uniqueId === props.products[index].uniqueId){
-        //         item.count = item.count+1
-        //     }
-        // })
-        // props.addItemToStore(localCopyOfItems)   
-
-        let finalProduct = props.products[index]
-        finalProduct["count"] = 1
-        props.addItemToStore(finalProduct)
-
+        if(existingItem.length > 0) {
+            let currentItem = {}
+            for(let i=0;i<localCopyOfItems.length;i++){
+                if(localCopyOfItems[i].uniqueId === existingItem) {
+                    currentItem = {...localCopyOfItems[i]}
+                    currentItem.count +=1 
+                    localCopyOfItems.splice(i,1, currentItem)
+                }
+            }
+            props.replaceAllitemsFromStore([...localCopyOfItems])
+        } else {
+            let finalProduct = props.products[index]
+            finalProduct["count"] = 1
+            props.addItemToStore(finalProduct)
+        }
     }
 
     return (
@@ -74,7 +86,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addItemToStore: newItem => dispatch({ type: "ADD_ITEM_TO_STORE", payload: newItem })
+        addItemToStore: newItem => dispatch({ type: "ADD_ITEM_TO_STORE", payload: newItem }),
+        replaceAllitemsFromStore: allItems => dispatch({ type: "REPLACE_ALL_ITEM_IN_STORE" , payload: allItems })
     }
 }
 
