@@ -1,0 +1,15 @@
+.popup-root {
+    width: 50%;
+    height: 500px;
+
+    border: 2px solid red;
+    background-color: white;
+
+    position: absolute;
+    top: 10rem;
+    left: 32rem;
+    z-index: 10;
+
+    /* opacity: 100% !important; */
+    color: red;
+}
