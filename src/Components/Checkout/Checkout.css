@@ -1,0 +1,26 @@
+.checkout-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.checkout-root button {
+    margin-top: 10%;
+    background-color: #0079BA !important;
+}
+
+.checkout-content {
+    margin-top: 150px;
+    text-align: left;
+    font-size: 24px;
+    width: 25rem;
+    box-shadow: 35px 29px 0px 10px rgba(0,121,186,1);
+    border: 2px solid #0079BA;
+    padding: 3% 6%;
+}
+
+.product-names {
+    font-size: 16px;
+}

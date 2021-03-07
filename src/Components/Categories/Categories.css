@@ -2,10 +2,6 @@
     padding: 3% 0;
 }
 
-.reduceOpacity {
-    /* opacity: 50%; */
-}
-
 .category-root > p {
     font-size: 32px;
     font-weight: 700;
@@ -21,10 +17,6 @@
 
 .single-product {
     text-align: left;
-}
-
-.pTitle {
-    /* cursor: pointer; */
 }
 
 .pPrice, .pTitle {
@@ -43,6 +35,5 @@
     height: 350px;
     box-shadow: 14px 9px 48px -24px rgba(0,0,0,0.75);
     border-radius: 10px;
-    /* cursor: pointer; */
 }
 

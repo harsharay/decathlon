@@ -1,0 +1,37 @@
+.login-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-content {
+
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 5%;
+}
+
+.input-block p {
+    font-size: 18px;
+    width: 100%;
+}
+
+.input-block input {
+    border: 2px solid #0079BA;
+    padding: 15px 22px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+}
+
+.login-content button {
+    margin-top: 35px;
+    width: 100%;
+}

@@ -10,7 +10,7 @@ const NavBar = (props) => {
 
     const history = useHistory()
     const [items, setItems] = useState([])
-    const [itemsCount, setItemsCount] = useState(10)
+    // const [itemsCount, setItemsCount] = useState(10)
 
     useEffect(() => {
         console.log(14,props)
@@ -23,9 +23,10 @@ const NavBar = (props) => {
     return (
         <div className="nav">
             <div className="nav-items-root">
+                <p onClick={() => history.push("/")}>DECATHLON</p>
                 <div className="nav-items-content">
                     <p onClick={handleCartClick}><ShoppingCartIcon />({props.itemsCount})</p>
-                    <Button variant="contained">Login</Button>
+                    {props.username.length > 0 ? <Button variant="contained" onClick={() => history.push("/myAccount")}>My Account</Button> : <Button variant="contained" onClick={() => history.push("/login")}>Login</Button>}
                 </div>
             </div>
         </div>
@@ -34,7 +35,8 @@ const NavBar = (props) => {
 
 const mapStateToProps = state => {
     return {
-        itemsCount : state.items.length
+        itemsCount : state.items.length,
+        username: state.loginDetails
     }
     
 }

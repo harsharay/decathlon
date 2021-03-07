@@ -14,7 +14,6 @@ const Categories = (props) => {
 
     useEffect(() => {
         setAllItemsFromStore(props.allItems)
-        console.log(props.allItems)
     },[props.allItems])
 
     const handleItemClick = index => {

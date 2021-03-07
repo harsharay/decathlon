@@ -1,0 +1,24 @@
+.myAccount-content > p {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+.myAccount-orders-group {
+    margin-top: 5%;
+}
+
+.myAccount-order {
+    padding: 2% 10%;
+    text-align: left;
+    margin-bottom: 2%;
+    font-size: 24px;
+    box-shadow: inset 200px -50px 0px -140px rgba(0,121,186,1);    
+    /* border-bottom: 2px solid #0079BA; */
+    border: 2px solid #0079BA;
+}
+
+.loginMessage {
+    font-size: 26px;
+    margin-top: 15%;
+}

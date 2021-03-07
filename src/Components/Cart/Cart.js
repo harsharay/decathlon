@@ -63,10 +63,17 @@ const Cart = (props) => {
         props.replacingAllItemsInStore(copyOfItems)
     }
 
+    const handleCheckout = () => {
+        if(props.username.length > 0) {
+            props.history.push("/checkout")
+        } else {
+            props.history.push("/login")
+        }
+    }
+
     return (
         <div className="cart-root">
             <div className="cart-block">
-                <p>All Items</p>
                 { props.allItems.length>0 ? 
                     <div className="cart-content">
                         {props.allItems.map((item, topIndex) => {
@@ -93,12 +100,12 @@ const Cart = (props) => {
                         })}
                     </div>
                     :
-                    <p>No items in cart</p>
+                    <p>Cart is empty...</p>
                 }
                 {props.allItems.length>0 && <div className="checkout-block">
                     <p>Total price: {totalPrice}</p>
                     <p className="cBlock-quantity">Quantity: {totalItemsCount}</p>
-                    <Button variant="contained" color="primary">Checkout</Button>
+                    <Button variant="contained" color="primary" onClick={handleCheckout}>Checkout</Button>
                 </div>}
             </div>
         </div>
@@ -107,7 +114,8 @@ const Cart = (props) => {
 
 const mapStateToProps = state => {
     return {
-        allItems : state.items
+        allItems : state.items,
+        username: state.loginDetails
     }
 }
 
