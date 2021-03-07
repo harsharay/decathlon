@@ -1,4 +1,6 @@
 export const loginData = {
-    "john doe": "12345",
-    "circle man": "12345",
+    "johndoe": "12345",
+    "testUser1": "12345",
+    "testuser2": "12345",
+    "test3": "12345"
 }
